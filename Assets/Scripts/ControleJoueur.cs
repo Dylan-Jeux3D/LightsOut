@@ -135,7 +135,7 @@ public class ControleJoueur : MonoBehaviour
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out collision, maxDistanceRaycast))
         {
-            if (collision.collider.tag == "Porte" && Input.GetKeyDown(KeyCode.E))
+            if (collision.collider.tag == "PorteDebarre" && Input.GetKeyDown(KeyCode.E))
             {
                 porteOuverte = !porteOuverte;
                 collision.collider.gameObject.GetComponent<Animator>().SetBool("PorteOuverte", porteOuverte);
@@ -178,6 +178,11 @@ public class ControleJoueur : MonoBehaviour
                 }
                 breakerOuvert = !breakerOuvert;
                 audioSource.PlayOneShot(sonInteractionBreaker, 1f);
+            }
+
+            if (collision.collider.tag == "Clee" && Input.GetKey(KeyCode.E))
+            {
+                collision.collider.gameObject.GetComponent<GestionPorteEtClee>().PeutOuvrirLaPorte = true;
             }
 
             if(collision.collider.gameObject.layer == 6)

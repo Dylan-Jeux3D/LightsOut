@@ -5,12 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Escalier
-  - Porte
   - Plancher
   - Interupteur
   - Breaker
   - LumActive
   - InterupteurDebut
+  - Clee
+  - PorteBarre
+  - PorteDebarre
   layers:
   - Default
   - TransparentFX
