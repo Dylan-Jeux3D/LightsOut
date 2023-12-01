@@ -33,6 +33,7 @@ public class ControleJoueur : MonoBehaviour
     public AudioClip sonInterupteurOuvrir;
     public AudioClip sonInterupteurFermer;
     public GameObject sonMarcheBois;
+    public AudioClip sonClee;
 
     private CharacterController characterController;
     Vector3 vitesseActuel;
@@ -47,8 +48,8 @@ public class ControleJoueur : MonoBehaviour
 
         //ajoutGravite = 200f;
 
-        porteOuverte = false;
-        lumieresOuvertes = false;
+        //porteOuverte = false;
+        //lumieresOuvertes = false;
         breakerOuvert = breaker.GetComponent<breaker>().breakerOuvert;
 
         curseur.color = Color.grey;
@@ -66,7 +67,7 @@ public class ControleJoueur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GetComponent<controleCams>().camsActives)
+        if (!GetComponent<controleCams>().camsActives && !ClownDetectionDeJoueur.JoueurMort)
         {
             forceFace = Input.GetAxisRaw("Vertical");
 
@@ -78,6 +79,12 @@ public class ControleJoueur : MonoBehaviour
             float rotationVertical = Input.GetAxis("Mouse Y") * vitesseRotation;
             cam.transform.Rotate(-rotationVertical, 0f, 0f);
         }
+        else
+        {
+            forceFace = 0f;
+            forceCote = 0f;
+        }
+
         Vector3 mouvement = transform.right * forceCote + transform.forward * forceFace;
 
         characterController.Move(mouvement.normalized * Time.deltaTime * vitesseDeplacement);
@@ -152,10 +159,7 @@ public class ControleJoueur : MonoBehaviour
 
             if ((collision.collider.tag == "Interupteur" || collision.collider.tag == "InterupteurDebut") && Input.GetKeyDown(KeyCode.E) && breakerOuvert)
             {
-                lumieresOuvertes = !lumieresOuvertes;
-                collision.collider.gameObject.GetComponent<Animator>().SetBool("LumieresOuvertes", lumieresOuvertes);
-
-                if(lumieresOuvertes)
+                if (lumieresOuvertes)
                 {
                     audioSource.PlayOneShot(sonInterupteurFermer, 1f);
                 }
@@ -163,6 +167,8 @@ public class ControleJoueur : MonoBehaviour
                 {
                     audioSource.PlayOneShot(sonInterupteurOuvrir, 1f);
                 }
+                lumieresOuvertes = !lumieresOuvertes;
+                collision.collider.gameObject.GetComponent<Animator>().SetBool("LumieresOuvertes", lumieresOuvertes);
             }
 
             if (collision.collider.tag == "Breaker" && Input.GetKeyDown(KeyCode.E))
@@ -177,12 +183,14 @@ public class ControleJoueur : MonoBehaviour
                     collision.collider.gameObject.GetComponent<breaker>().FermerBreaker();
                 }
                 breakerOuvert = !breakerOuvert;
-                audioSource.PlayOneShot(sonInteractionBreaker, 1f);
+                audioSource.PlayOneShot(sonInteractionBreaker, 3f);
             }
 
             if (collision.collider.tag == "Clee" && Input.GetKey(KeyCode.E))
             {
                 collision.collider.gameObject.GetComponent<GestionPorteEtClee>().PeutOuvrirLaPorte = true;
+                collision.collider.tag = "Untagged";
+                audioSource.PlayOneShot(sonClee, 2f);
             }
 
             if(collision.collider.gameObject.layer == 6)

@@ -7,6 +7,7 @@ public class controleCams : MonoBehaviour
 {
     public GameObject telephone; //Le telephone du joueur
     public bool camsActives; //Est ce que les cams de securite
+    public GameObject lebreaker;
 
     [Header("Les Cams")]
     public Camera mainCam; // La camera du joueur
@@ -28,7 +29,7 @@ public class controleCams : MonoBehaviour
     void Update()
     {
         //Si le joueur peut ouvrir les cams et il appuie sur la touche espace
-        if (telephone.GetComponent<ControleTelephone>().peutOuvrirCams && Input.GetKeyDown(KeyCode.Space))
+        if (telephone.GetComponent<ControleTelephone>().peutOuvrirCams && Input.GetKeyDown(KeyCode.Space) && lebreaker.GetComponent<breaker>().breakerOuvert)
         {
             //On active ou desactive les cams
             camsActives = !camsActives;
@@ -51,14 +52,14 @@ public class controleCams : MonoBehaviour
         if (camsActives)
         {
             //Et que le joueur appuie sur la fleche de gauche
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 //On change le ID de la cam active
                 numeroCamActif -= 1;
                 Invoke("changerCamSelectionne", 0.1f);
             }
             //ET que le joueur appuie sur la fleche de droite
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKeyDown(KeyCode.D))
             {
                 //On change le ID de la cam active
                 numeroCamActif += 1;
@@ -68,13 +69,15 @@ public class controleCams : MonoBehaviour
             //On bloque le ID a 1 car il n'y a pas de cam en bas de 0
             if (numeroCamActif < 1)
             {
-                numeroCamActif = 1;
+                numeroCamActif = lesCamsDeSurveillances.Length;
             }
             //Et on ne veut pas que le ID depasse le nb de cam
             else if (numeroCamActif > lesCamsDeSurveillances.Length)
             {
-                numeroCamActif = lesCamsDeSurveillances.Length;
+                numeroCamActif = 1;
             }
+
+            gameObject.transform.position = gameObject.transform.position;
         }
         // Sinon ou ferme le cam
         else

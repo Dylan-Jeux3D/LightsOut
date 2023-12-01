@@ -35,7 +35,7 @@ public class breaker : MonoBehaviour
 
         //Apres 20 secondes, on ferme tous les lumiers et on joue le son intense
         Invoke("FermerBreaker", 20f);
-        Invoke("JouerSonPowerOut", 19.5f);
+        Invoke("JouerSonPowerOut", 20f);
     }
 
     public void AllumerBreaker()

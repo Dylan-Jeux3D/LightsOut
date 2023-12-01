@@ -15,8 +15,8 @@ Material:
   m_InvalidKeywords:
   - _EMISSION
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -113,7 +113,7 @@ Material:
     - _TessMax: 25
     - _TessMin: 10
     - _TessValue: 16
-    - _Tile: 1
+    - _Tile: 0.4
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
