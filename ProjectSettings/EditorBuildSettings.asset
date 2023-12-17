@@ -6,7 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Avertissement.unity
+    guid: 1b8c685c3f382aa44894ab10c947cefe
+  - enabled: 1
+    path: Assets/Scenes/LightsOutDebut.unity
+    guid: a583367816df5924c868fb6f97b6496b
+  - enabled: 1
     path: Assets/Scenes/LightsOutJeu.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/LightsOutMort.unity
+    guid: d51c5f8d3db67f440b11c3a1f631dab1
+  - enabled: 1
+    path: Assets/Scenes/LightsOutVictoire.unity
+    guid: 72889395bdc07fc43aad26c13f40f41f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

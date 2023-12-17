@@ -97,7 +97,7 @@ MonoBehaviour:
         m_Extent: {x: 40.5, y: 81, z: 81}
     serializedHasVolumes:
     - sceneGUID: 99c9720ab356a0642a771bea13969a05
-      hasProbeVolumes: 1
+      hasProbeVolumes: 0
     bakingSets:
     - {fileID: 11400000, guid: 3931199e3782a924a8ecc1ee6d0ff1c7, type: 2}
     m_LightingScenario: Default

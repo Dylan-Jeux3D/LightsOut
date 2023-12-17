@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class ClownDetectionDeJoueur : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class ClownDetectionDeJoueur : MonoBehaviour
     public AudioClip sonJumpscare;
     public GameObject sonChase;
     //public GameObject leClown;
+
+    public GameObject leTelephone;
+    public GameObject sanity;
 
     Animator animator;
     NavMeshAgent nav;
@@ -92,6 +96,19 @@ public class ClownDetectionDeJoueur : MonoBehaviour
 
             //Et finalement, on fait jouer le son du jumpscare
             GetComponent<AudioSource>().PlayOneShot(sonJumpscare);
+
+            //On enleve les element qui sont dans la vu du joueur
+            leTelephone.SetActive(false);
+            sanity.SetActive(false);
+
+            //On appelle la fonction pour changer de scene
+            Invoke("allerVersMenuFin", 2f);
         }
+    }
+
+    void allerVersMenuFin()
+    {
+        //On affiche le menu de fin
+        SceneManager.LoadScene("LightsOutMort");
     }
 }

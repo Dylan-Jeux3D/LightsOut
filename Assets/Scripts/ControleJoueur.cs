@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +26,7 @@ public class ControleJoueur : MonoBehaviour
     public GameObject breaker;
 
     public Image curseur;
+    public Image cadena;
 
     [Header("Les Sons")]
     public AudioClip sonInteractionBreaker;
@@ -39,6 +41,18 @@ public class ControleJoueur : MonoBehaviour
     Vector3 vitesseActuel;
     public float gravite = -9.81f;
     AudioSource audioSource;
+
+    [Header("Le Keypad")]
+    public GameObject imageKeypad;
+    public bool keypadOuvert;
+    public string mdp; //Le mot de passe pour le keypad
+    string nummdp1;
+    string nummdp2;
+    string nummdp3;
+    string nummdp4;
+
+    public TextMeshPro[] lesNumsCobinaison;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +71,33 @@ public class ControleJoueur : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         audioSource = GetComponent<AudioSource>();
+        nummdp1 = UnityEngine.Random.Range(1, 9).ToString();
+        nummdp2 = UnityEngine.Random.Range(1, 9).ToString();
+        nummdp3 = UnityEngine.Random.Range(1, 9).ToString();
+        nummdp4 = UnityEngine.Random.Range(1, 9).ToString();
+
+        mdp = nummdp1 + nummdp2 + nummdp3 + nummdp4;
+        print(mdp);
+
+        foreach (TextMeshPro unNum in lesNumsCobinaison)
+        {
+            if (unNum.gameObject.name == "num1")
+            {
+                unNum.text = nummdp1;
+            }
+            else if(unNum.gameObject.name == "num2")
+            {
+                unNum.text = nummdp2;
+            }
+            else if (unNum.gameObject.name == "num3")
+            {
+                unNum.text = nummdp3;
+            }
+            else if (unNum.gameObject.name == "num4")
+            {
+                unNum.text = nummdp4;
+            }
+        }
     }
 
     void FixedUpdate()
@@ -67,7 +108,7 @@ public class ControleJoueur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GetComponent<controleCams>().camsActives && !ClownDetectionDeJoueur.JoueurMort)
+        if (!GetComponent<controleCams>().camsActives && !ClownDetectionDeJoueur.JoueurMort && !keypadOuvert)
         {
             forceFace = Input.GetAxisRaw("Vertical");
 
@@ -156,7 +197,16 @@ public class ControleJoueur : MonoBehaviour
                     audioSource.PlayOneShot(sonOuvrirPorte, 1f);
                 }
             }
-
+            if (collision.collider.tag == "PorteBarre")
+            {
+                curseur.enabled = false;
+                cadena.enabled = true;
+            }
+            else
+            {
+                curseur.enabled = true;
+                cadena.enabled = false;
+            }
             if ((collision.collider.tag == "Interupteur" || collision.collider.tag == "InterupteurDebut") && Input.GetKeyDown(KeyCode.E) && breakerOuvert)
             {
                 if (lumieresOuvertes)
@@ -193,6 +243,13 @@ public class ControleJoueur : MonoBehaviour
                 audioSource.PlayOneShot(sonClee, 2f);
             }
 
+            if (collision.collider.tag == "Keypad" && Input.GetKey(KeyCode.E))
+            {
+                imageKeypad.SetActive(true);
+                keypadOuvert = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+
             if(collision.collider.gameObject.layer == 6)
             {
                 curseur.color = Color.white;
@@ -204,6 +261,8 @@ public class ControleJoueur : MonoBehaviour
         }
         else
         {
+            cadena.enabled = false;
+            curseur.enabled = true;
             curseur.color = Color.grey;
         }
 

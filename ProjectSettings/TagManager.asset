@@ -13,6 +13,7 @@ TagManager:
   - Clee
   - PorteBarre
   - PorteDebarre
+  - Keypad
   layers:
   - Default
   - TransparentFX
