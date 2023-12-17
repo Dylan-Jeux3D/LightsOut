@@ -8,6 +8,7 @@ public class controleCams : MonoBehaviour
     public GameObject telephone; //Le telephone du joueur
     public bool camsActives; //Est ce que les cams de securite
     public GameObject lebreaker;
+    public GameObject nomDuJoueur;
 
     [Header("Les Cams")]
     public Camera mainCam; // La camera du joueur
@@ -88,6 +89,8 @@ public class controleCams : MonoBehaviour
                 cam.gameObject.SetActive(false);
             }
 
+            nomDuJoueur.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
+
             /*************Remarque*****************/
             //On ne desactive jamais la main cam
             //Parce que sinon, les animations du telephone (qui est attacher a la main cam)
@@ -97,6 +100,15 @@ public class controleCams : MonoBehaviour
 
             //Et on reactive le curseur
             Invoke("activerDesactiverCurseur", 0f);
+        }
+
+        //On oriente le nom du jouer vers la cam qui est active 
+        foreach(Camera camera in lesCamsDeSurveillances)
+        {
+            if (camera.gameObject.activeSelf)
+            {
+                nomDuJoueur.transform.LookAt(camera.transform.position);
+            }
         }
         
     }

@@ -10,6 +10,9 @@ public class gesrionKeypad : MonoBehaviour
 {
     public GameObject imageKeypad;
     public GameObject joueur;
+    public AudioClip sonBoutton;
+    public AudioClip sonMauvaisMDP;
+    public AudioClip sonBonMDP;
 
     public TextMeshProUGUI[] lesNbPourCombinaison;
     public int positionCombinaison;
@@ -29,6 +32,7 @@ public class gesrionKeypad : MonoBehaviour
 
     public void ajouterNumALaCombinaison(GameObject boutonClique)
     {
+        GetComponent<AudioSource>().PlayOneShot(sonBoutton);
         if (positionCombinaison < lesNbPourCombinaison.Length + 1)
         {
             foreach (TextMeshProUGUI unNum in lesNbPourCombinaison)
@@ -40,33 +44,35 @@ public class gesrionKeypad : MonoBehaviour
             }
             positionCombinaison++;
         }
-
-        if(positionCombinaison == lesNbPourCombinaison.Length + 1)
-        {
-            Invoke("verifierMDP", 0);
-        }
     }
 
     public void verifierMDP()
     {
-        foreach(TextMeshProUGUI unNum in lesNbPourCombinaison)
+        GetComponent<AudioSource>().PlayOneShot(sonBoutton);
+        foreach (TextMeshProUGUI unNum in lesNbPourCombinaison)
         {
             mdp = mdp + unNum.text;
         }
         print(mdp);
         if (mdp == joueur.GetComponent<ControleJoueur>().mdp)
         {
-            Invoke("allezVersMenuVictoire", 2f);
+            GetComponent<Animator>().SetTrigger("bon");
+            GetComponent<AudioSource>().PlayOneShot(sonBonMDP);
+            Invoke("allezVersMenuVictoire", 5f);
         }
         else
         {
+            GetComponent<Animator>().SetTrigger("mauvais");
+            GetComponent<AudioSource>().PlayOneShot(sonMauvaisMDP);
             Invoke("resetMDP", 2f);
         }
+
     }
 
-    void resetMDP()
+    public void resetMDP()
     {
-        foreach(TextMeshProUGUI unNum in lesNbPourCombinaison)
+        GetComponent<AudioSource>().PlayOneShot(sonBoutton);
+        foreach (TextMeshProUGUI unNum in lesNbPourCombinaison)
         {
             unNum.text = "-";
             positionCombinaison = 1;

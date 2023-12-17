@@ -52,11 +52,14 @@ public class ControleJoueur : MonoBehaviour
     string nummdp4;
 
     public TextMeshPro[] lesNumsCobinaison;
+    public TextMeshPro nomDuJoueur;
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        nomDuJoueur.text = gestionAvertissement.nomJoueur;
 
         cam.transform.localRotation = Quaternion.Euler(0, 0, cam.transform.rotation.z);
 
@@ -71,10 +74,10 @@ public class ControleJoueur : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         audioSource = GetComponent<AudioSource>();
-        nummdp1 = UnityEngine.Random.Range(1, 9).ToString();
-        nummdp2 = UnityEngine.Random.Range(1, 9).ToString();
-        nummdp3 = UnityEngine.Random.Range(1, 9).ToString();
-        nummdp4 = UnityEngine.Random.Range(1, 9).ToString();
+        nummdp1 = UnityEngine.Random.Range(0, 10).ToString();
+        nummdp2 = UnityEngine.Random.Range(0, 10).ToString();
+        nummdp3 = UnityEngine.Random.Range(0, 10).ToString();
+        nummdp4 = UnityEngine.Random.Range(0, 10).ToString();
 
         mdp = nummdp1 + nummdp2 + nummdp3 + nummdp4;
         print(mdp);

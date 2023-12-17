@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class GererNiveauSanity : MonoBehaviour
     public int sanity;
     int vitesseDeDescentesSanity;
     public Slider barreSanity;
+    public TextMeshProUGUI pourcentage;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,8 @@ public class GererNiveauSanity : MonoBehaviour
         {
             vitesseDeDescentesSanity = 5;
         }
+
+        pourcentage.text = Mathf.Ceil(barreSanity.value / barreSanity.maxValue * 100) + "%";
     }
 
     void ReduireNiveauDeSanity()
