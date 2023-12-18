@@ -522,8 +522,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Ce jeu contient des jumpscares !\n\xC2mes sensibles s'abstenir."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13cb66df4d375624aa7ecc832bb94b75, type: 2}
+  m_sharedMaterial: {fileID: -475534788215393430, guid: 13cb66df4d375624aa7ecc832bb94b75,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -656,8 +657,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13cb66df4d375624aa7ecc832bb94b75, type: 2}
+  m_sharedMaterial: {fileID: -475534788215393430, guid: 13cb66df4d375624aa7ecc832bb94b75,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -791,7 +793,7 @@ MonoBehaviour:
   m_text: "Pour une meilleur experience, l'utilisation d'\xE9couteur est fortement
     recommend\xE9."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13cb66df4d375624aa7ecc832bb94b75, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -855,7 +857,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &254203942
@@ -925,8 +927,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Avertissement !
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13cb66df4d375624aa7ecc832bb94b75, type: 2}
+  m_sharedMaterial: {fileID: -475534788215393430, guid: 13cb66df4d375624aa7ecc832bb94b75,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1059,8 +1062,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Avant de commencer, \nveuiller entrer votre nom de joueur."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13cb66df4d375624aa7ecc832bb94b75, type: 2}
+  m_sharedMaterial: {fileID: -475534788215393430, guid: 13cb66df4d375624aa7ecc832bb94b75,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1214,8 +1218,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Votre nom de joueur...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13cb66df4d375624aa7ecc832bb94b75, type: 2}
+  m_sharedMaterial: {fileID: -475534788215393430, guid: 13cb66df4d375624aa7ecc832bb94b75,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1946,8 +1951,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: '>'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13cb66df4d375624aa7ecc832bb94b75, type: 2}
+  m_sharedMaterial: {fileID: -475534788215393430, guid: 13cb66df4d375624aa7ecc832bb94b75,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

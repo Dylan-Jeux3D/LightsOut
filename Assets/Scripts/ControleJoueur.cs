@@ -111,7 +111,10 @@ public class ControleJoueur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GetComponent<controleCams>().camsActives && !ClownDetectionDeJoueur.JoueurMort && !keypadOuvert)
+        if (!GetComponent<controleCams>().camsActives 
+            && !ClownDetectionDeJoueur.JoueurMort 
+            && !keypadOuvert 
+            && !GetComponent<gestionMenuTache>().menuTacheOuvert)
         {
             forceFace = Input.GetAxisRaw("Vertical");
 
@@ -229,7 +232,8 @@ public class ControleJoueur : MonoBehaviour
                 if (!breakerOuvert)
                 {
                     collision.collider.gameObject.GetComponent<breaker>().AllumerBreaker();
-                    
+                    GetComponent<gestionMenuTache>().invokerVerificationTache();
+
                 }
                 else
                 {
@@ -244,9 +248,10 @@ public class ControleJoueur : MonoBehaviour
                 collision.collider.gameObject.GetComponent<GestionPorteEtClee>().PeutOuvrirLaPorte = true;
                 collision.collider.tag = "Untagged";
                 audioSource.PlayOneShot(sonClee, 2f);
+                GetComponent<gestionMenuTache>().invokerVerificationTache();
             }
 
-            if (collision.collider.tag == "Keypad" && Input.GetKey(KeyCode.E))
+            if (collision.collider.tag == "Keypad" && Input.GetKey(KeyCode.E) && breakerOuvert)
             {
                 imageKeypad.SetActive(true);
                 keypadOuvert = true;

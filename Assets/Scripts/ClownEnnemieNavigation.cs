@@ -57,6 +57,11 @@ public class ClownEnnemieNavigation : MonoBehaviour
     {
         idPositionNav++;
 
+        if (idPositionNav > lesPointsDeNav.Length)
+        {
+            idPositionNav = 1;
+        }
+
         foreach (GameObject navPoint in lesPointsDeNav)
         {
             if (navPoint.name == "PointNav" + idPositionNav)
