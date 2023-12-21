@@ -213,7 +213,10 @@ public class ControleJoueur : MonoBehaviour
                 curseur.enabled = true;
                 cadena.enabled = false;
             }
-            if ((collision.collider.tag == "Interupteur" || collision.collider.tag == "InterupteurDebut") && Input.GetKeyDown(KeyCode.E) && breakerOuvert)
+            if ((collision.collider.tag == "Interupteur" || collision.collider.tag == "InterupteurDebut") 
+                && Input.GetKeyDown(KeyCode.E) 
+                && breakerOuvert 
+                && !GererNiveauSanity.noSanity)
             {
                 if (lumieresOuvertes)
                 {
@@ -227,7 +230,7 @@ public class ControleJoueur : MonoBehaviour
                 collision.collider.gameObject.GetComponent<Animator>().SetBool("LumieresOuvertes", lumieresOuvertes);
             }
 
-            if (collision.collider.tag == "Breaker" && Input.GetKeyDown(KeyCode.E))
+            if (collision.collider.tag == "Breaker" && Input.GetKeyDown(KeyCode.E) && !GererNiveauSanity.noSanity)
             {
                 if (!breakerOuvert)
                 {
@@ -251,7 +254,7 @@ public class ControleJoueur : MonoBehaviour
                 GetComponent<gestionMenuTache>().invokerVerificationTache();
             }
 
-            if (collision.collider.tag == "Keypad" && Input.GetKey(KeyCode.E) && breakerOuvert)
+            if (collision.collider.tag == "Keypad" && Input.GetKey(KeyCode.E) && breakerOuvert && !GererNiveauSanity.noSanity)
             {
                 imageKeypad.SetActive(true);
                 keypadOuvert = true;
@@ -278,15 +281,4 @@ public class ControleJoueur : MonoBehaviour
 
         /*********************************************************************************************************/
     }
-
-
-
-
-    /*private void OnCollisionEnter(Collision infoCollision)
-    {
-        if (infoCollision.gameObject.tag == "Escalier")
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-        }
-    }*/
 }

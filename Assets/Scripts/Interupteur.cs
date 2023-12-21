@@ -24,14 +24,14 @@ public class Interupteur : MonoBehaviour
 
     private void Update()
     {
-        if (!breaker.GetComponent<breaker>().breakerOuvert)
+        if (!breaker.GetComponent<breaker>().breakerOuvert && !GererNiveauSanity.noSanity)
         {
             foreach (Material unMaterial in materielLumiere)
             {
                 unMaterial.DisableKeyword("_EMISSION");
             }
         }
-        else if (lumOuverte && breaker.GetComponent<breaker>().breakerOuvert)
+        else if (lumOuverte && breaker.GetComponent<breaker>().breakerOuvert && !GererNiveauSanity.noSanity)
         {
             foreach (Material unMaterial in materielLumiere)
             {

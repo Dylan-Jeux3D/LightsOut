@@ -55,12 +55,14 @@ public class ClownEnnemieNavigation : MonoBehaviour
 
     void AllerVersProchainPointNav()
     {
-        idPositionNav++;
+        //idPositionNav++;
 
-        if (idPositionNav > lesPointsDeNav.Length)
+        /*if (idPositionNav > lesPointsDeNav.Length)
         {
             idPositionNav = 1;
-        }
+        }*/
+
+        idPositionNav = Random.Range(1, lesPointsDeNav.Length);
 
         foreach (GameObject navPoint in lesPointsDeNav)
         {

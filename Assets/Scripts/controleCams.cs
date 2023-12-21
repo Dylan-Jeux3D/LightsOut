@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,10 @@ public class controleCams : MonoBehaviour
     int numeroCamActif; //Int qui represente le ID de la cam de securite qui est active
     public Image curseur; //Le curseur pour pouvoir le desactiver
 
+    public GameObject volumeCams;
+    public GameObject camsUI;
+    public TextMeshProUGUI numCamsUI;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +35,10 @@ public class controleCams : MonoBehaviour
     void Update()
     {
         //Si le joueur peut ouvrir les cams et il appuie sur la touche espace
-        if (telephone.GetComponent<ControleTelephone>().peutOuvrirCams && Input.GetKeyDown(KeyCode.Space) && lebreaker.GetComponent<breaker>().breakerOuvert)
+        if (telephone.GetComponent<ControleTelephone>().peutOuvrirCams 
+            && Input.GetKeyDown(KeyCode.Space) 
+            && lebreaker.GetComponent<breaker>().breakerOuvert 
+            && !GererNiveauSanity.noSanity)
         {
             //On active ou desactive les cams
             camsActives = !camsActives;
@@ -42,7 +50,7 @@ public class controleCams : MonoBehaviour
             if (camsActives)
             {
                 //On les active
-                Invoke("OuvrirFermerLesCams", 0.6f);
+                Invoke("OuvrirLesCams", 0.6f);
 
                 //Et on desactive le curseur
                 Invoke("activerDesactiverCurseur", 0.6f);
@@ -97,6 +105,8 @@ public class controleCams : MonoBehaviour
             //ne sont pas sauvegarder
             mainCam.GetComponent<Camera>().enabled = true;
             mainCam.GetComponent<AudioListener>().enabled = true;
+            volumeCams.SetActive(false);
+            camsUI.SetActive(false);
 
             //Et on reactive le curseur
             Invoke("activerDesactiverCurseur", 0f);
@@ -110,14 +120,19 @@ public class controleCams : MonoBehaviour
                 nomDuJoueur.transform.LookAt(camera.transform.position);
             }
         }
+
+        numCamsUI.text = numeroCamActif.ToString() + " / " + lesCamsDeSurveillances.Length;
         
     }
 
-    void OuvrirFermerLesCams()
+    void OuvrirLesCams()
     {
         mainCam.GetComponent<Camera>().enabled = false;
         mainCam.GetComponent<AudioListener>().enabled = false;
         //camCuisine.gameObject.SetActive(camsActives);
+
+        volumeCams.SetActive(true);
+        camsUI.SetActive(true);
 
         foreach (Camera cam in lesCamsDeSurveillances)
         {
