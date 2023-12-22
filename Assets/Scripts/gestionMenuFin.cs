@@ -10,6 +10,7 @@ public class gestionMenuFin : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame

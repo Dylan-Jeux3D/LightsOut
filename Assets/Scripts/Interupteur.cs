@@ -9,7 +9,6 @@ public class Interupteur : MonoBehaviour
     public GameObject[] lesLumieres;
     public Material[] materielLumiere;
     public bool lumOuverte;
-    public GameObject breaker;
 
     public void Start()
     {
@@ -24,14 +23,14 @@ public class Interupteur : MonoBehaviour
 
     private void Update()
     {
-        if (!breaker.GetComponent<breaker>().breakerOuvert && !GererNiveauSanity.noSanity)
+        if (!breaker.breakerOuvert && !GererNiveauSanity.noSanity)
         {
             foreach (Material unMaterial in materielLumiere)
             {
                 unMaterial.DisableKeyword("_EMISSION");
             }
         }
-        else if (lumOuverte && breaker.GetComponent<breaker>().breakerOuvert && !GererNiveauSanity.noSanity)
+        else if (lumOuverte && breaker.breakerOuvert && !GererNiveauSanity.noSanity)
         {
             foreach (Material unMaterial in materielLumiere)
             {

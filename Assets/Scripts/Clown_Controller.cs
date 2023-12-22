@@ -15,7 +15,7 @@ public class Clown_Controller : MonoBehaviour
         {
             unClown.SetActive(false);
         }
-        InvokeRepeating("ChangerLeClownActif", 60f, 30f);
+        InvokeRepeating("ChangerLeClownActif", 120f, 60f);
     }
 
     // Update is called once per frame

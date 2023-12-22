@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class breaker : MonoBehaviour
 {
+    public static bool breakerOuvert;//Un bool public qui dit a d'autre script si le breaker est ouvert ou non
     public Material matLumiereBreaker; //Le materiel de la lumiere du breaker
-    public bool breakerOuvert; //Un bool public qui dit a d'autre script si le breaker est ouvert ou non
     public Light lumiereBreaker; //La lumiere attachee au breaker
 
     [Header("TOUS les lumieres du jeu")]

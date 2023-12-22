@@ -21,9 +21,7 @@ public class ControleJoueur : MonoBehaviour
     public float maxDistanceRaycast;
     bool porteOuverte;
     bool lumieresOuvertes;
-    bool breakerOuvert;
-
-    public GameObject breaker;
+    public bool breakerOuvert;
 
     public Image curseur;
     public Image cadena;
@@ -67,7 +65,7 @@ public class ControleJoueur : MonoBehaviour
 
         //porteOuverte = false;
         //lumieresOuvertes = false;
-        breakerOuvert = breaker.GetComponent<breaker>().breakerOuvert;
+        breakerOuvert = breaker.breakerOuvert;
 
         curseur.color = Color.grey;
 
@@ -254,7 +252,7 @@ public class ControleJoueur : MonoBehaviour
                 GetComponent<gestionMenuTache>().invokerVerificationTache();
             }
 
-            if (collision.collider.tag == "Keypad" && Input.GetKey(KeyCode.E) && breakerOuvert && !GererNiveauSanity.noSanity)
+            if (collision.collider.tag == "Keypad" && Input.GetKey(KeyCode.E) && !GererNiveauSanity.noSanity)
             {
                 imageKeypad.SetActive(true);
                 keypadOuvert = true;

@@ -8,7 +8,6 @@ public class controleCams : MonoBehaviour
 {
     public GameObject telephone; //Le telephone du joueur
     public bool camsActives; //Est ce que les cams de securite
-    public GameObject lebreaker;
     public GameObject nomDuJoueur;
 
     [Header("Les Cams")]
@@ -36,8 +35,8 @@ public class controleCams : MonoBehaviour
     {
         //Si le joueur peut ouvrir les cams et il appuie sur la touche espace
         if (telephone.GetComponent<ControleTelephone>().peutOuvrirCams 
-            && Input.GetKeyDown(KeyCode.Space) 
-            && lebreaker.GetComponent<breaker>().breakerOuvert 
+            && Input.GetKeyDown(KeyCode.C) 
+            && breaker.breakerOuvert 
             && !GererNiveauSanity.noSanity)
         {
             //On active ou desactive les cams

@@ -46,7 +46,7 @@ public class GererNiveauSanity : MonoBehaviour
         barreSanity.maxValue = maxSanity;
         barreSanity.value = sanity;
 
-        if (leBreaker.GetComponent<breaker>().breakerOuvert)
+        if (breaker.breakerOuvert)
         {
             vitesseDeDescentesSanity = 2;
         }

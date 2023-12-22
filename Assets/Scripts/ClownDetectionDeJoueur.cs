@@ -18,6 +18,9 @@ public class ClownDetectionDeJoueur : MonoBehaviour
 
     public GameObject leTelephone;
     public GameObject sanity;
+    public GameObject[] lesMenus;
+    public GameObject curseur;
+    bool chase;
 
     Animator animator;
     NavMeshAgent nav;
@@ -47,11 +50,15 @@ public class ClownDetectionDeJoueur : MonoBehaviour
         {
             if (collision.collider.name == "Joueur" && !JoueurMort)
             {
-                nav.SetDestination(Joueur.transform.position);
-                nav.speed = 2.5f;
-                animator.SetBool("chase", true);
-                sonChase.SetActive(true);
+                chase = true;
             }
+        }
+        if (chase && !JoueurMort)
+        {
+            nav.SetDestination(Joueur.transform.position);
+            nav.speed = 2.5f;
+            animator.SetBool("chase", true);
+            sonChase.SetActive(true);
         }
         Debug.DrawRay(transform.position + new Vector3(0f, 2f, 0f), direction,Color.blue);
     }
@@ -98,8 +105,16 @@ public class ClownDetectionDeJoueur : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(sonJumpscare);
 
             //On enleve les element qui sont dans la vu du joueur
+            Joueur.GetComponent<controleCams>().camsActives = false;
+            Joueur.GetComponent<AudioSource>().Stop();
             leTelephone.SetActive(false);
             sanity.SetActive(false);
+            curseur.SetActive(false);
+
+            foreach(GameObject menu in lesMenus)
+            {
+                menu.SetActive(false);
+            }
 
             //On appelle la fonction pour changer de scene
             Invoke("allerVersMenuFin", 2f);

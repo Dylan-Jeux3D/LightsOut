@@ -9,7 +9,6 @@ public class gestionMenuTache : MonoBehaviour
     public GameObject[] lesTaches;
     public int numTacheEnCours;
     public bool menuTacheOuvert;
-    public GameObject breaker;
 
     [Header("Les clées")]
     public GameObject[] lesClees;
@@ -61,7 +60,7 @@ public class gestionMenuTache : MonoBehaviour
             {
                 numTacheEnCours++;
             }
-            else if(clee.name == "CleeChambrePrincipale" && !clee.activeSelf && breaker.GetComponent<breaker>().breakerOuvert)
+            else if(clee.name == "CleeChambrePrincipale" && !clee.activeSelf && breaker.breakerOuvert)
             {
                 numTacheEnCours++;
             }
