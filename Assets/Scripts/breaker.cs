@@ -38,6 +38,7 @@ public class breaker : MonoBehaviour
         Invoke("JouerSonPowerOut", 20f);
     }
 
+    /***************** Fonction qui allume le breaker ***************************/
     public void AllumerBreaker()
     {
         //On change l'etat du breaker
@@ -63,6 +64,7 @@ public class breaker : MonoBehaviour
         }
     }
 
+    /*********************** Fonction qui ferme le breaker ******************************/
     public void FermerBreaker()
     {
         //On change l'etat du breaker
@@ -87,6 +89,7 @@ public class breaker : MonoBehaviour
         }
     }
 
+    /******************** Fonction qui fait jouer les sons quand le breaker ferme (AU DEBUT SEULEMENT) ****************************/
     void JouerSonPowerOut()
     {
         GetComponent<AudioSource>().PlayOneShot(sonPowerDown, 2f);

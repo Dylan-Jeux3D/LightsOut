@@ -1287,9 +1287,10 @@ GameObject:
   - component: {fileID: 41466159}
   - component: {fileID: 41466158}
   - component: {fileID: 41466157}
+  - component: {fileID: 41466160}
   m_Layer: 6
   m_Name: ControleurPorteSousSol
-  m_TagString: PorteDebarre
+  m_TagString: PorteBarre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1353,6 +1354,19 @@ Transform:
   - {fileID: 1878311006}
   m_Father: {fileID: 1787473969}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &41466160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41466156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1dea972fe11404f8cdef4f4ce8dd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteOuverte: 0
 --- !u!1 &45215671
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,6 +3167,7 @@ GameObject:
   - component: {fileID: 160892674}
   - component: {fileID: 160892673}
   - component: {fileID: 160892672}
+  - component: {fileID: 160892675}
   m_Layer: 6
   m_Name: ControleurPorteChambreprincipale
   m_TagString: PorteBarre
@@ -3219,6 +3234,19 @@ Transform:
   - {fileID: 161062218}
   m_Father: {fileID: 1787473969}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &160892675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160892671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1dea972fe11404f8cdef4f4ce8dd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteOuverte: 0
 --- !u!4 &161062218 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4754073856193944, guid: 3865dab15f85624439f27d11cc132971,
@@ -3575,6 +3603,7 @@ PrefabInstance:
     - {fileID: 6447363312054082602, guid: 9e4d4910b774d1f48810a4fa933835c5, type: 3}
     - {fileID: 374507579, guid: 9e4d4910b774d1f48810a4fa933835c5, type: 3}
     - {fileID: 745671375, guid: 9e4d4910b774d1f48810a4fa933835c5, type: 3}
+    - {fileID: 745671373, guid: 9e4d4910b774d1f48810a4fa933835c5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5515,6 +5544,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2738404820723936118, guid: 36510e737e626954986f2c5112be9091, type: 3}
     - {fileID: 778501379, guid: 36510e737e626954986f2c5112be9091, type: 3}
+    - {fileID: 778501377, guid: 36510e737e626954986f2c5112be9091, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5990,6 +6020,7 @@ GameObject:
   - component: {fileID: 299356427}
   - component: {fileID: 299356426}
   - component: {fileID: 299356425}
+  - component: {fileID: 299356428}
   m_Layer: 6
   m_Name: ControleurPorteBreaker
   m_TagString: PorteBarre
@@ -6056,6 +6087,19 @@ Transform:
   - {fileID: 1823549199}
   m_Father: {fileID: 1787473969}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &299356428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299356424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1dea972fe11404f8cdef4f4ce8dd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteOuverte: 0
 --- !u!1 &303543203
 GameObject:
   m_ObjectHideFlags: 0
@@ -6577,6 +6621,7 @@ GameObject:
   - component: {fileID: 316930378}
   - component: {fileID: 316930377}
   - component: {fileID: 316930376}
+  - component: {fileID: 316930379}
   m_Layer: 6
   m_Name: ControleurPorteMonstre
   m_TagString: PorteBarre
@@ -6643,6 +6688,19 @@ Transform:
   - {fileID: 398112670}
   m_Father: {fileID: 1787473969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &316930379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316930375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1dea972fe11404f8cdef4f4ce8dd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteOuverte: 0
 --- !u!1 &318891421
 GameObject:
   m_ObjectHideFlags: 0
@@ -10039,6 +10097,7 @@ GameObject:
   - component: {fileID: 427590810}
   - component: {fileID: 427590809}
   - component: {fileID: 427590808}
+  - component: {fileID: 427590811}
   m_Layer: 6
   m_Name: ControleurPorteSalleDeBain (1)
   m_TagString: PorteDebarre
@@ -10105,6 +10164,19 @@ Transform:
   - {fileID: 1310086170}
   m_Father: {fileID: 1787473969}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &427590811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427590807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1dea972fe11404f8cdef4f4ce8dd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteOuverte: 0
 --- !u!1001 &434868213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12519,6 +12591,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6430890726198682700, guid: 7699f5af06713974ba61777a8a830f6e,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.81438
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430890726198682700, guid: 7699f5af06713974ba61777a8a830f6e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.81438
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430890726198682700, guid: 7699f5af06713974ba61777a8a830f6e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.81438
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430890726198682700, guid: 7699f5af06713974ba61777a8a830f6e,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.359997
       objectReference: {fileID: 0}
@@ -13770,6 +13857,7 @@ PrefabInstance:
     - {fileID: 1034749826, guid: f072b6d5974d6a14da67d1db1cd20b92, type: 3}
     - {fileID: 1034749825, guid: f072b6d5974d6a14da67d1db1cd20b92, type: 3}
     - {fileID: 2116746182, guid: f072b6d5974d6a14da67d1db1cd20b92, type: 3}
+    - {fileID: 2116746180, guid: f072b6d5974d6a14da67d1db1cd20b92, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13786,7 +13874,7 @@ GameObject:
   - component: {fileID: 548961684}
   - component: {fileID: 548961683}
   m_Layer: 5
-  m_Name: Image
+  m_Name: MenuKeyPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22199,6 +22287,8 @@ PrefabInstance:
     - {fileID: 1031967142, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
     - {fileID: 811105021, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
     - {fileID: 7886138107685249725, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
+    - {fileID: 436849880, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
+    - {fileID: 1031967140, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -23165,6 +23255,8 @@ PrefabInstance:
     - {fileID: 546353385, guid: 452921da7fe17904da8c1d34c235dee4, type: 3}
     - {fileID: 1540771278, guid: 452921da7fe17904da8c1d34c235dee4, type: 3}
     - {fileID: 1167171021, guid: 452921da7fe17904da8c1d34c235dee4, type: 3}
+    - {fileID: 546353383, guid: 452921da7fe17904da8c1d34c235dee4, type: 3}
+    - {fileID: 2038714608, guid: 452921da7fe17904da8c1d34c235dee4, type: 3}
     m_RemovedGameObjects:
     - {fileID: 7274324110683035209, guid: 452921da7fe17904da8c1d34c235dee4, type: 3}
     m_AddedGameObjects: []
@@ -24031,6 +24123,7 @@ GameObject:
   - component: {fileID: 809459563}
   - component: {fileID: 809459562}
   - component: {fileID: 809459561}
+  - component: {fileID: 809459564}
   m_Layer: 6
   m_Name: ControleurPorte1er(Acces Interdit) (1)
   m_TagString: PorteBarre
@@ -24097,6 +24190,19 @@ Transform:
   - {fileID: 1604959126}
   m_Father: {fileID: 1787473969}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!114 &809459564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809459560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1dea972fe11404f8cdef4f4ce8dd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteOuverte: 0
 --- !u!1 &814066590
 GameObject:
   m_ObjectHideFlags: 0
@@ -27941,6 +28047,7 @@ GameObject:
   - component: {fileID: 982140750}
   - component: {fileID: 982140749}
   - component: {fileID: 982140748}
+  - component: {fileID: 982140751}
   m_Layer: 6
   m_Name: ControleurPorteSalleDeBain
   m_TagString: PorteDebarre
@@ -28007,6 +28114,19 @@ Transform:
   - {fileID: 1377720200}
   m_Father: {fileID: 1787473969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &982140751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982140747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1dea972fe11404f8cdef4f4ce8dd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteOuverte: 0
 --- !u!1 &983131313
 GameObject:
   m_ObjectHideFlags: 0
@@ -29039,7 +29159,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -30570,7 +30690,9 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5545287591788728562, guid: 54a1d2aa299948d4386f320102e514a9, type: 3}
+    - {fileID: 5545287590895851207, guid: 54a1d2aa299948d4386f320102e514a9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -31052,7 +31174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leBreaker: {fileID: 1361628144}
-  maxSanity: 10000
+  maxSanity: 5000
   sanity: 0
   barreSanity: {fileID: 1154921724}
   pourcentage: {fileID: 1808558083}
@@ -40688,6 +40810,7 @@ GameObject:
   - component: {fileID: 1421095163}
   - component: {fileID: 1421095162}
   - component: {fileID: 1421095161}
+  - component: {fileID: 1421095164}
   m_Layer: 6
   m_Name: ControleurPorte1er(Acces Interdit)
   m_TagString: PorteBarre
@@ -40754,6 +40877,19 @@ Transform:
   - {fileID: 488395590}
   m_Father: {fileID: 1787473969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1421095164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421095160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1dea972fe11404f8cdef4f4ce8dd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteOuverte: 0
 --- !u!1 &1443231590
 GameObject:
   m_ObjectHideFlags: 0
@@ -43731,6 +43867,9 @@ PrefabInstance:
     - {fileID: 436849882, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
     - {fileID: 1031967142, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
     - {fileID: 7886138107685249725, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
+    - {fileID: 436849880, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
+    - {fileID: 1031967140, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
+    - {fileID: 811105021, guid: 226aa234041d2be48881aab9632ea78e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -43978,6 +44117,7 @@ PrefabInstance:
     - {fileID: 2738404820723936118, guid: 36510e737e626954986f2c5112be9091, type: 3}
     - {fileID: 778501379, guid: 36510e737e626954986f2c5112be9091, type: 3}
     - {fileID: 778501378, guid: 36510e737e626954986f2c5112be9091, type: 3}
+    - {fileID: 778501377, guid: 36510e737e626954986f2c5112be9091, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -44303,6 +44443,7 @@ GameObject:
   - component: {fileID: 1504872930}
   - component: {fileID: 1504872929}
   - component: {fileID: 1504872928}
+  - component: {fileID: 1504872931}
   m_Layer: 6
   m_Name: ControleurPorte1erChambre
   m_TagString: PorteBarre
@@ -44369,6 +44510,19 @@ Transform:
   - {fileID: 936605755}
   m_Father: {fileID: 1787473969}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!114 &1504872931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504872927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1dea972fe11404f8cdef4f4ce8dd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteOuverte: 0
 --- !u!1 &1507375549
 GameObject:
   m_ObjectHideFlags: 0
@@ -45321,6 +45475,7 @@ PrefabInstance:
     - {fileID: 8913563490242518849, guid: 2e2398df6726e164fb29cbffecf878a0, type: 3}
     - {fileID: 5989090119118474454, guid: 2e2398df6726e164fb29cbffecf878a0, type: 3}
     - {fileID: 3937928780767704340, guid: 2e2398df6726e164fb29cbffecf878a0, type: 3}
+    - {fileID: 4024938239063627940, guid: 2e2398df6726e164fb29cbffecf878a0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3912716741428189770, guid: 2e2398df6726e164fb29cbffecf878a0,
@@ -50703,7 +50858,6 @@ MonoBehaviour:
   sonJumpscare: {fileID: 8300000, guid: 8ff6302bb7ffff147823fdc96475dde8, type: 3}
   sonChase: {fileID: 1167597708}
   leTelephone: {fileID: 1800918576}
-  sanity: {fileID: 1837700450}
   lesMenus:
   - {fileID: 1837700450}
   - {fileID: 548961681}
@@ -57541,7 +57695,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Trouver la cl\xE9e jaune du bureau.\n(RC)"
+  m_text: "Trouver la cl\xE9e bleu du bureau.\n(RC)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 13cb66df4d375624aa7ecc832bb94b75, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -58466,6 +58620,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2738404820723936118, guid: 36510e737e626954986f2c5112be9091, type: 3}
     - {fileID: 778501379, guid: 36510e737e626954986f2c5112be9091, type: 3}
+    - {fileID: 778501377, guid: 36510e737e626954986f2c5112be9091, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -59502,17 +59657,17 @@ PrefabInstance:
     - target: {fileID: 4071069836747969314, guid: 609cad5eb478dd849beaf2705286bdf7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.885
+      value: 40.915
       objectReference: {fileID: 0}
     - target: {fileID: 4071069836747969314, guid: 609cad5eb478dd849beaf2705286bdf7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.278
+      value: 6.048
       objectReference: {fileID: 0}
     - target: {fileID: 4071069836747969314, guid: 609cad5eb478dd849beaf2705286bdf7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.19
+      value: -7.32
       objectReference: {fileID: 0}
     - target: {fileID: 4071069836747969314, guid: 609cad5eb478dd849beaf2705286bdf7,
         type: 3}

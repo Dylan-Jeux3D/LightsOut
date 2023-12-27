@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class GestionPorteEtClee : MonoBehaviour
 {
-    public GameObject PorteQueLaCleeOuvre; //Reference a la clee que le joueur doit prendre pour ouvrir cette porte
-    public GameObject LaClee;
+    public GameObject PorteQueLaCleeOuvre; //Reference a la porte que le clee ouvre
+    public GameObject LaClee; //Reference a la clee que le joueur doit prendre pour ouvrir cette porte
     public bool PeutOuvrirLaPorte; //Est ce que il peut ouvrir la porte
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        //Si on la clee a été ramassé
         if (PeutOuvrirLaPorte)
         {
+            //On debarre la porte
             PorteQueLaCleeOuvre.tag = "PorteDebarre";
+
+            //Et on désactive la clee
             LaClee.SetActive(false);
         }
     }

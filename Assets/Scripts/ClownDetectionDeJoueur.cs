@@ -6,28 +6,27 @@ using UnityEngine.SceneManagement;
 
 public class ClownDetectionDeJoueur : MonoBehaviour
 {
-    public static bool JoueurMort;
-    /*public LayerMask layerToIgnore;
-    public Color couleurSphere;*/
-    public GameObject Joueur;
-    public Camera CamJoueur;
-    public GameObject teteClown;
-    public AudioClip sonJumpscare;
-    public GameObject sonChase;
-    //public GameObject leClown;
+    public static bool JoueurMort; //Bool static qui indique au jeu si le joueur est mort
+    public GameObject Joueur; //Le joueur
+    public Camera CamJoueur; //La main cam
+    public GameObject teteClown; //La tete du clown
+    public AudioClip sonJumpscare; //Le son de jumpscare
+    public GameObject sonChase; //Le son de poursuite
 
-    public GameObject leTelephone;
-    public GameObject sanity;
-    public GameObject[] lesMenus;
-    public GameObject curseur;
-    bool chase;
+    public GameObject leTelephone; //Le téléphone
+    public GameObject[] lesMenus; //Tableau des menu a fermer
+    public GameObject curseur; //Le curseur
+    bool chase; //bool qui indique si le joueur se fait poursuivre par le monstre
 
-    Animator animator;
-    NavMeshAgent nav;
+    Animator animator; //L'animator
+    NavMeshAgent nav; //Le navMeshAgent
     // Start is called before the first frame update
     void Start()
     {
+        //A udebut le joueur n'est pas mort
         JoueurMort = false;
+
+        //On affecte les variables a leurs components
         animator = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
     }
@@ -40,24 +39,30 @@ public class ClownDetectionDeJoueur : MonoBehaviour
         //On calcule la distance entre le joueur (target) et le clown (origin) pour ainsi le mettre
         //Comme direction pour le RayCast sinon, le celui-ci pointe dans le vide
         Vector3 direction = (Joueur.transform.position + new Vector3(0f, -2f, 0f)) - transform.position;
-
-        /*if (Physics.SphereCast(transform.position, 10f, transform.forward, out collision, layerToIgnore))
-        {
-            print(collision.collider.gameObject.name);
-        }*/
         
+        //Si le raycast du monstre (qui pointe vers le joueur, touche le joueur)
         if (Physics.Raycast(transform.position + new Vector3(0f, 2f, 0f), direction, out collision, 10f))
         {
             if (collision.collider.name == "Joueur" && !JoueurMort)
             {
+                //Le monstre chase le joueur
                 chase = true;
             }
         }
+
+        //Si le monstre chase et que le joueur est encore en vie
         if (chase && !JoueurMort)
         {
+            //On set sa destination a la position du joueur
             nav.SetDestination(Joueur.transform.position);
+
+            //On augmente sa vitesse
             nav.speed = 2.5f;
+
+            //On active l'animation de chase (meme que marche mais plus vite)
             animator.SetBool("chase", true);
+
+            //On active le son du poursuite
             sonChase.SetActive(true);
         }
         Debug.DrawRay(transform.position + new Vector3(0f, 2f, 0f), direction,Color.blue);
@@ -108,7 +113,6 @@ public class ClownDetectionDeJoueur : MonoBehaviour
             Joueur.GetComponent<controleCams>().camsActives = false;
             Joueur.GetComponent<AudioSource>().Stop();
             leTelephone.SetActive(false);
-            sanity.SetActive(false);
             curseur.SetActive(false);
 
             foreach(GameObject menu in lesMenus)

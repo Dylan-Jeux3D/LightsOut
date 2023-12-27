@@ -17,9 +17,9 @@ public class controleCams : MonoBehaviour
     int numeroCamActif; //Int qui represente le ID de la cam de securite qui est active
     public Image curseur; //Le curseur pour pouvoir le desactiver
 
-    public GameObject volumeCams;
-    public GameObject camsUI;
-    public TextMeshProUGUI numCamsUI;
+    public GameObject volumeCams; //Le global volume des cams
+    public GameObject camsUI; //Les instructions dans le UI (1/5 + les touches pour changer de cam)
+    public TextMeshProUGUI numCamsUI; //Le numéro de la cam active dans le UI
 
 
     // Start is called before the first frame update
@@ -124,30 +124,41 @@ public class controleCams : MonoBehaviour
         
     }
 
+    /********************** Fonction pour ouvrir les caméras de surveillances ********************************/
     void OuvrirLesCams()
     {
+        //On desactive le component camera (pour ne pas avoir plusieurs cam d'activer en meme temps)
         mainCam.GetComponent<Camera>().enabled = false;
+
+        //On désactive aussi sont audioListener pour pas en avoir 2 en meme temps
         mainCam.GetComponent<AudioListener>().enabled = false;
         //camCuisine.gameObject.SetActive(camsActives);
 
+        //On active le volume et le UI
         volumeCams.SetActive(true);
         camsUI.SetActive(true);
 
+        //Pour chaque cam
         foreach (Camera cam in lesCamsDeSurveillances)
         {
+            //Si son nom correspond avec le numCamActif
             if (cam.gameObject.name == "Camera" + numeroCamActif + "")
             {
+                //On l'active
                 cam.gameObject.SetActive(true);
             }
             else
             {
+                //Sinon on la désactive
                 cam.gameObject.SetActive(false);
             }
         }
     }
 
+    /******************* Fonction qui change la cemara activé **********************/
     void changerCamSelectionne()
     {
+        //Meme principe que pour ouvrir les cams
         foreach (Camera cam in lesCamsDeSurveillances)
         {
             if (cam.gameObject.name == "Camera" + numeroCamActif + "")
@@ -161,9 +172,10 @@ public class controleCams : MonoBehaviour
         }
     }
 
+    /******************** Fonction pour activer ou désactiver le curseur ******************************/
     void activerDesactiverCurseur()
     {
-        //On desactive le curseur
+        //On change l'etat du curseur
         curseur.gameObject.SetActive(!camsActives);
     }
 }
